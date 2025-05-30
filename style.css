@@ -1,0 +1,189 @@
+
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+  
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: #f5f7fa;
+      color: #2c3e50;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background: linear-gradient(90deg, #667eea, #764ba2);
+      padding: 1.5rem 2rem;
+      color: white;
+      font-weight: 600;
+      font-size: 1.8rem;
+      box-shadow: 0 2px 8px rgba(118, 75, 162, 0.5);
+      text-align: center;
+    }
+
+    main {
+      flex: 1;
+      padding: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .course-card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: default;
+    }
+    .course-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 14px 30px rgba(102, 126, 234, 0.4);
+      cursor: pointer;
+    }
+
+    .course-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: #364f6b;
+    }
+
+    .course-description {
+      flex-grow: 1;
+      font-size: 0.95rem;
+      color: #546e7a;
+      margin-bottom: 1rem;
+      line-height: 1.3;
+    }
+
+    .progress-bar-container {
+      background: #e0e0e0;
+      border-radius: 12px;
+      height: 14px;
+      margin-bottom: 1rem;
+      overflow: hidden;
+    }
+
+    .progress-bar {
+      height: 100%;
+      border-radius: 12px;
+      background: linear-gradient(90deg, #667eea, #764ba2);
+      width: 0%;
+      transition: width 0.5s ease-in-out;
+    }
+
+    .course-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    button.watch-btn {
+      background: #667eea;
+      border: none;
+      color: white;
+      padding: 0.5rem 1rem;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.25s ease;
+      user-select: none;
+    }
+    button.watch-btn:hover {
+      background: #564fc9;
+    }
+
+    /* Modal styles */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.7);
+      backdrop-filter: blur(3px);
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      padding: 1rem;
+    }
+    .modal-overlay.active {
+      display: flex;
+    }
+    .modal-content {
+      background: white;
+      border-radius: 12px;
+      max-width: 900px;
+      width: 100%;
+      max-height: 80vh;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.25);
+    }
+    .modal-header {
+      padding: 1rem 1.5rem;
+      background: #667eea;
+      color: white;
+      font-weight: 600;
+      font-size: 1.2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .modal-close-btn {
+      background: transparent;
+      border: none;
+      color: white;
+      font-size: 1.4rem;
+      cursor: pointer;
+      font-weight: 700;
+      line-height: 1;
+      user-select: none;
+    }
+
+    .modal-video {
+      flex-grow: 1;
+      background: black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-video iframe,
+    .modal-video video {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem 2rem;
+      font-size: 0.9rem;
+      color: #8898aa;
+      background: #f0f2f5;
+      user-select: none;
+    }
+
+    @media (max-width: 600px) {
+      main {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+      }
+      .course-card {
+        padding: 1rem;
+      }
+    }
+  
